@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1,
+            shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="author" content="Hossam Mohamed" />
+    <link rel="shortcut icon" href="images/logo_icon.png" title="Favicon" sizes="16x16" />
+
+    <!--With LTR -->
+    <link rel="stylesheet" href="css/lib/bootstrap.min.css">
+    <!--  -->
+
+    <!--With RTL -->
+    <!-- <link rel="stylesheet" href="css/lib/bootstrap.rtl.min.css" /> -->
+    <!--  -->
+
+    <!-- google roboto font -->
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Sail&display=swap" rel="stylesheet">
+    <!--  -->
+
+    <link rel="stylesheet" href="css/lib/animate.css" />
+    <link rel="stylesheet" href="css/lib/jquery.fancybox.css" />
+    <link rel="stylesheet" href="css/lib/swiper.min.css" />
+    <link rel="stylesheet" href="css/lib/all.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <!-- <link rel="stylesheet" href="css/style_en.css"> -->
+    <title> Abdelrahman & Noor </title>
+
+
+</head>
+
+<body class="">
+
+
+    <!--Content-->
+
+    <!--  start header  -->
+    <header>
+        <div class="bg">
+            <img src="images/hero-bg2.png" alt="" class="img_cover">
+        </div>
+        <div class="container">
+            <div class="content">
+                <div class="img img1">
+                    <img src="images/h1.jpeg" alt="">
+                </div>
+                <div class="img img2">
+                    <img src="images/h2.jpeg" alt="">
+                </div>
+            </div>
+        </div>
+    </header>
+    <!--  end header  -->
+
+    <main>
+
+
+        <!-- ---------- date card ----------- -->
+        <section class="the_date">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-10">
+                        <div class="date_card">
+                            <h5> Save the Date </h5>
+                            <h2 class="sub_font"> Abd Elrahman & Noor </h2>
+                            <h6> We Are Getting Married October 11,2024 </h6>
+                            <img src="images/2.png" alt="" class="img2 mt-3">
+                            <ul class="counter">
+                                <li><span id="days"></span>Days</li>
+                                <li><span id="hours"></span>Hours</li>
+                                <li><span id="minutes"></span>Minutes</li>
+                                <li><span id="seconds"></span>Seconds</li>
+                            </ul>
+                            <img src="images/1.png" alt="" class="img1">
+                            <img src="images/3.png" alt="" class="img3">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+
+        <!-- ---------- disabled_services ----------- -->
+        
+
+        <!-- ---------- testimonials   ----------- -->
+        
+
+        <!-- ---------- portfolio ----------- -->
+        
+
+        <!-- ---------- contact  ----------- -->
+        
+        <!-- ---------- College  ----------- -->
+
+
+        <!-- <div class="img_pattern1">
+        </div> -->
+    </main>
+    <!-- ---------- footer  ----------- -->
+    <footer class="section_padding">
+
+    </footer>
+    <!--End-Contents-->
+
+    <!-- ------------ modals ----------- -->
+
+    <!-- ====== start to top button ====== -->
+    <!-- <div class="progress-wrap">
+        <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+            <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"
+                style="transition: stroke-dashoffset 10ms linear 0s; stroke-dasharray: 307.919, 307.919; stroke-dashoffset: 220.587;">
+            </path>
+        </svg>
+    </div> -->
+    <!-- ====== end to top button ====== -->
+    <!-- -------------- request ----------------- -->
+    <script src="js/lib/jquery-3.0.0.min.js"></script>
+    <script src="js/lib/jquery-migrate-3.0.0.min.js"></script>
+    <script src="js/lib/bootstrap.bundle.min.js"></script>
+    <script src="js/lib/wow.min.js"></script>
+    <script src="js/lib/jquery.fancybox.js"></script>
+    <script src="js/lib/swiper.min.js"></script>
+    <script src="js/lib/jquery.waypoints.min.js"></script>
+    <script src="js/lib/jquery.counterup.js"></script>
+    <script src="js/lib/back-to-top.js"></script>
+    <script src="js/main.js"></script>
+
+    <script>
+        const second = 1000,
+        minute = second * 60,
+        hour = minute * 60,
+        day = hour * 24,
+        week = hour * 24 * 7;
+
+        let countDown = new Date('oct 11, 2024 10:00:00').getTime(),
+            x = setInterval(function() {
+
+                let now = new Date().getTime(),
+                    distance = countDown - now;
+
+                document.getElementById('days').innerText = Math.floor(distance / (day)),
+                    document.getElementById('hours').innerText = Math.floor((distance % (day)) / (hour)),
+                    document.getElementById('minutes').innerText = Math.floor((distance % (hour)) / (minute)),
+                    document.getElementById('seconds').innerText = Math.floor((distance % (minute)) / second);
+
+                //do something later when date is reached
+                //if (distance < 0) {
+                //  clearInterval(x);
+                //  'IT'S MY BIRTHDAY!;
+                //}
+
+            }, second)
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,366 @@
+*,
+* button:focus {
+  outline: 0;
+}
+
+:root {
+  --mainColor: #CD9A38;
+  --subColor: #C8C5C7;
+  /* --subColor2: #77643d; */
+}
+
+.sub_font {
+  font-family: "Sail", system-ui;
+}
+
+.mainColor {
+  color: var(--mainColor) !important;
+}
+
+.mainBack {
+  background-color: var(--mainColor) !important;
+  border-color: var(--mainColor) !important;
+}
+
+html::-webkit-scrollbar {
+  height: 20px;
+  width: 10px;
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+html::-webkit-scrollbar-thumb {
+  background: #999;
+  border-radius: 10px;
+}
+
+html::-webkit-scrollbar-corner {
+  background: #999;
+  border-radius: 10px;
+}
+
+body {
+  font-family: "Jost", sans-serif;
+  text-decoration: none;
+  font-size: 0.9em;
+  overflow-x: hidden;
+  position: relative;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 500;
+  margin: 0;
+  line-height: 1.6;
+}
+
+body a:hover {
+  text-decoration: none;
+}
+
+body a:focus {
+  outline: 0;
+}
+
+body ul {
+  list-style-type: none;
+  margin: 0;
+}
+
+[type=email], [type=number], [type=tel], [type=url] {
+  direction: inherit;
+}
+
+.btn-default:active,
+.btn-default:active:focus,
+.btn-default:active:hover,
+.btn-default:focus,
+.btn-default:hover,
+.btn-primary:not(:disabled):not(.disabled):active:focus,
+.btn:not(:disabled):not(.disabled).active,
+.btn:not(:disabled):not(.disabled):active {
+  -webkit-appearance: none;
+}
+
+.btn:active,
+.btn:active:focus,
+.btn:active:hover,
+.btn:focus,
+.btn:hover,
+.btn:not(:disabled):not(.disabled).active,
+.btn:not(:disabled):not(.disabled):active {
+  transition: all 0.6s ease;
+  outline: 0;
+}
+
+/* ==================== global style ============================== */
+a,
+span,
+img {
+  display: inline-block;
+  transition: all 0.3s ease;
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #999;
+}
+
+ul {
+  padding: 0;
+}
+
+img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.img_cover {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.img_contain {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+p {
+  font-size: 15px;
+  line-height: 1.7;
+  margin: 0;
+}
+
+.text,
+.text * {
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+small.text {
+  font-size: 12px;
+}
+
+.section_padding {
+  padding: 80px 0;
+}
+
+.dropdown .dropdown-menu {
+  border-radius: 10px;
+  padding: 10px;
+  border: 0;
+  box-shadow: 15px 15px 30px rgba(0, 0, 0, 0.0666666667);
+}
+.dropdown .dropdown-menu .dropdown-item {
+  font-size: 14px;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+}
+
+/* --------------- to_top button --------------- */
+.progress-wrap {
+  position: fixed;
+  left: 20px;
+  bottom: 20px;
+  height: 50px;
+  width: 50px;
+  cursor: pointer;
+  display: block;
+  border-radius: 50px;
+  box-shadow: inset 0 0 0 2px rgba(0, 0, 0, 0.0666666667);
+  opacity: 0;
+  overflow: hidden;
+  visibility: hidden;
+  transform: translateX(-100px);
+  z-index: 99;
+  transition: all 200ms linear;
+}
+.progress-wrap::after {
+  background: url(../images/top-arrow.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  content: "";
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  position: absolute;
+  color: #000;
+  left: 13px;
+  top: 13px;
+  height: 25px;
+  width: 25px;
+  display: block;
+}
+.progress-wrap svg path {
+  fill: #f8f8f8;
+}
+.progress-wrap svg.progress-circle path {
+  stroke: #000;
+  stroke-width: 5;
+  box-sizing: border-box;
+}
+.progress-wrap.active-progress {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* --------------- content --------------- */
+header {
+  position: relative;
+  padding: 100px 0;
+}
+header .bg {
+  height: 500px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+header .content {
+  position: relative;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+header .content .img {
+  width: 30vw;
+  height: 40vw;
+  max-width: 420px;
+  padding: 2vw;
+  background: #fff;
+  text-align: center;
+  margin: 0 auto;
+  transform: rotate(-23.044deg);
+  margin-top: 30px;
+}
+header .content .img.img2 {
+  transform: rotate(23.044deg);
+}
+header .content .img img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: top;
+     object-position: top;
+}
+
+.the_date .date_card {
+  position: relative;
+  padding: 5vw;
+  background-color: #fff;
+  box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.0666666667);
+  z-index: 20;
+  margin-top: -100px;
+  text-align: center;
+  outline: 1px solid var(--mainColor);
+  outline-offset: -20px;
+}
+.the_date .date_card .img1 {
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform: translate(-30%, -30%);
+  width: 40%;
+}
+.the_date .date_card .img3 {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  transform: translate(30%, 30%);
+  width: 30%;
+}
+.the_date .date_card .img2 {
+  height: 100px;
+}
+.the_date .date_card h5 {
+  color: var(--mainColor);
+  font-size: 30px;
+}
+.the_date .date_card h2 {
+  font-size: 70px;
+  margin-bottom: 15px;
+}
+.the_date .date_card h6 {
+  font-size: 25px;
+}
+.the_date .date_card .counter li {
+  display: inline-block;
+  font-size: 1.2em;
+  list-style-type: none;
+  padding: 1em;
+  text-transform: uppercase;
+  font-style: italic;
+}
+.the_date .date_card .counter li span {
+  display: block;
+  font-size: 4.5rem;
+}
+
+/* --------------- to_top --------------- */
+/* --------------- to_top --------------- */
+/* --------------- to_top --------------- */
+/* --------------- to_top --------------- */
+/* --------------- to_top --------------- */
+/* --------------- to_top --------------- */
+/* --------------- to_top --------------- */
+/* --------------- to_top --------------- */
+/* ======== */
+@media screen and (max-width: 991px) {
+  .the_date .date_card {
+    padding: 50px 30px 100px;
+  }
+  .the_date .date_card h5 {
+    font-size: 21px;
+  }
+  .the_date .date_card h2 {
+    font-size: 25px;
+  }
+  .the_date .date_card h6 {
+    font-size: 14px;
+  }
+  .the_date .date_card .img2 {
+    height: 50px;
+  }
+  .the_date .date_card .counter li span {
+    font-size: 1.5em;
+  }
+  .the_date .date_card .img1 {
+    transform: translate(0%, -50%);
+    width: 40%;
+  }
+  .the_date .date_card .img3 {
+    transform: translate(0%, 40%);
+    width: 40%;
+  }
+  .the_date .date_card .counter li {
+    font-size: 18px;
+    padding: 10px 5px;
+    width: 45%;
+  }
+}
+/* ======= */
+html[dir=ltr] {
+  @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+}
+html[dir=ltr] body {
+  direction: ltr;
+  font-family: "Poppins", sans-serif;
+}/*# sourceMappingURL=style.css.map */
