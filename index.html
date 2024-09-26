@@ -137,26 +137,64 @@
         minute = second * 60,
         hour = minute * 60,
         day = hour * 24,
-        week = hour * 24 * 7;
+        week = day * 7;
 
-        let countDown = new Date('oct 11, 2024 10:00:00').getTime(),
-            x = setInterval(function() {
+    let countDown = new Date('sep 27, 2024 01:37:50').getTime(),
+        x = setInterval(function() {
 
-                let now = new Date().getTime(),
-                    distance = countDown - now;
+            let now = new Date().getTime(),
+                distance = countDown - now;
 
-                document.getElementById('days').innerText = Math.floor(distance / (day)),
-                    document.getElementById('hours').innerText = Math.floor((distance % (day)) / (hour)),
-                    document.getElementById('minutes').innerText = Math.floor((distance % (hour)) / (minute)),
-                    document.getElementById('seconds').innerText = Math.floor((distance % (minute)) / second);
+            document.getElementById('days').innerText = Math.floor(distance / (day));
+            document.getElementById('hours').innerText = Math.floor((distance % (day)) / (hour));
+            document.getElementById('minutes').innerText = Math.floor((distance % (hour)) / (minute));
+            document.getElementById('seconds').innerText = Math.floor((distance % (minute)) / second);
 
-                //do something later when date is reached
-                //if (distance < 0) {
-                //  clearInterval(x);
-                //  'IT'S MY BIRTHDAY!;
-                //}
+            // Check if the countdown has finished
+            if (distance < 0) {
+                clearInterval(x);
+                document.getElementById('days').innerText = 0;
+                document.getElementById('hours').innerText = 0;
+                document.getElementById('minutes').innerText = 0;
+                document.getElementById('seconds').innerText = 0;
 
-            }, second)
+                // Send a notification
+                notifyUser();
+
+                // Do something else when the date is reached
+                // alert('IT\'S MY BIRTHDAY!');
+            }
+
+        }, second);
+
+    // Request notification permission
+    function requestNotificationPermission() {
+        if (Notification.permission === 'granted') {
+            return;
+        }
+
+        if (Notification.permission !== 'denied') {
+            Notification.requestPermission().then(permission => {
+                if (permission === 'granted') {
+                    console.log('Notification permission granted.');
+                }
+            });
+        }
+    }
+
+    // Notify user
+    function notifyUser() {
+        if (Notification.permission === 'granted') {
+            new Notification("Countdown Finished!", {
+                body: "The timer has ended!",
+                icon: 'https://example.com/icon.png' // Optional: Add your own icon here
+            });
+        }
+    }
+
+    // Call the function to request notification permission when the page loads
+    requestNotificationPermission();
+
     </script>
 
 </body>
